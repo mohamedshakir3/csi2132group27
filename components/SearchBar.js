@@ -25,7 +25,7 @@ export default function SearchBar() {
     <>
     <div className={Searchbar.searchBar}>
         <div className={Searchbar.selector}>
-            <label for="city">City</label>
+            <label htmlFor="city">City</label>
             <select className={Searchbar.custom_select} name="city" id="city" onChange={() => setCity(event.target.value)}>
                 <option value="default">Select a city</option>
                 <option value="newyork">New York</option>
@@ -35,21 +35,21 @@ export default function SearchBar() {
             </select>
         </div>
         <div className={Searchbar.selector}>
-            <label for="from">From</label>
+            <label htmlFor="from">From</label>
             <input type="date" id="from" name="from" onChange={() => setFrom(event.target.value)} />
         </div>
         <div className={Searchbar.selector}>
-            <label for="from">To</label>
+            <label htmlFor="from">To</label>
             <input type="date" id="to" name="to" onChange={() => setTo(event.target.value)} />
         </div>
         <div className={Searchbar.selector}>
-            <label for="Stars">Stars</label>
+            <label htmlFor="Stars">Stars</label>
             <div className={Searchbar.counter}>
                 <Counter minCount = {0} maxCount={5} updateParentState={setStars}/>
             </div>
         </div>
         <div className={Searchbar.selector}>
-            <label for="Person">Persons</label>
+            <label htmlFor="Person">Persons</label>
             <div className={Searchbar.counter}>
                 <Counter minCount = {0} maxCount={10} updateParentState={setPersons}/>
             </div>

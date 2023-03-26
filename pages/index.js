@@ -1,4 +1,4 @@
-import home from '../styles/home.module.css'
+import home from '../styles/Home.module.css'
 import SearchBar from '@/components/SearchBar'
 export default function Home() {
   return (
@@ -12,3 +12,4 @@ export default function Home() {
     </>
   )
 }
+
