@@ -1,0 +1,177 @@
+.form_group {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.form_control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1.2rem + 0.0625rem);
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476A;
+    background-color: #e6e7ee;
+    background-clip: padding-box;
+    border: 0.0625rem solid #D1D9E6;
+    border-radius: 0.55rem;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.mt_1,
+.my_1 {
+    margin-top: 0.25rem !important;
+}
+.mr_2,
+.mx_2 {
+    margin-right: 0.5rem !important;
+}
+
+.custom_select {
+    display: inline_block;
+    width: 100%;
+    height: calc(1.5em + 1.2rem + 0.0625rem);
+    padding: 0.6rem 1.75rem 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476A;
+    vertical-align: middle;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23525480' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no_repeat right 0.75rem center/8px 10px;
+    background-color: #e6e7ee;
+    border: 0.0625rem solid #D1D9E6;
+    border-radius: 0.55rem;
+    box-shadow: inset 0 1px 2px rgba(38, 40, 51, 0.075);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.mr_sm,
+.mx_sm {
+    margin-right: 1rem !important;
+}
+
+.input_group {
+    box-shadow: inset 2px 2px 5px #b8b9be, inset _3px _3px 7px #FFFFFF;
+    border-radius: 0.55rem;
+    transition: all 0.2s ease;
+}
+
+.input_group_prepend,
+.input_group_append {
+    display: flex;
+}
+
+.input_group_prepend .btn,
+  .input_group_append .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.input_group_prepend .btn:focus,
+    .input_group_append .btn:focus {
+    z-index: 3;
+}
+
+.input_group_prepend .btn + .btn,
+  .input_group_prepend .btn + .input_group_text,
+  .input_group_prepend .input_group_text + .input_group_text,
+  .input_group_prepend .input_group_text + .btn,
+  .input_group_append .btn + .btn,
+  .input_group_append .btn + .input_group_text,
+  .input_group_append .input_group_text + .input_group_text,
+  .input_group_append .input_group_text + .btn {
+    margin-left: _0.0625rem;
+}
+
+.input_group_prepend {
+    margin-right: _0.0625rem;
+}
+
+.input_group_append {
+    margin-left: _0.0625rem;
+}
+
+.input_group_text {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #44476A;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e6e7ee;
+    border: 0.0625rem solid #D1D9E6;
+    border-radius: 0.55rem;
+}
+
+.datepicker {
+    border-radius: 4px;
+    direction: ltr;
+}
+
+.datepicker_inline {
+    width: 220px;
+}
+
+.datepicker_rtl {
+    direction: rtl;
+}
+
+.datepicker_rtl.dropdown-menu {
+    left: auto;
+}
+
+.datepicker_rtl table tr td span {
+    float: right;
+}
+
+.datepicker_dropdown {
+    top: 0;
+    left: 0;
+    padding: 20px 22px;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+}
+
+.datepicker_dropdown.datepicker_orient_left:before {
+    left: 6px;
+}
+
+.datepicker_dropdown.datepicker_orient_left:after {
+    left: 7px;
+}
+
+.datepicker_dropdown.datepicker_orient_right:before {
+    right: 6px;
+}
+
+.datepicker_dropdown.datepicker_orient_right:after {
+    right: 7px;
+}
+
+.datepicker_dropdown.datepicker_orient_bottom:before {
+    top: -7px;
+}
+
+.datepicker_dropdown.datepicker_orient_bottom:after {
+    top: -6px;
+}
+
+.datepicker_dropdown.datepicker_orient_top:before {
+    bottom: -7px;
+    border-bottom: 0;
+    border-top: 7px solid white;
+}
+
+.datepicker_dropdown.datepicker_orient_top:after {
+    bottom: -6px;
+    border-bottom: 0;
+    border-top: 6px solid #ECF0F3;
+}

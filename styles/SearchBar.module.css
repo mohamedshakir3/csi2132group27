@@ -1,0 +1,38 @@
+
+.searchBar{ 
+    border-radius: 10px;
+    background: #dddddc;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+    width: 55rem; 
+    height: 10rem; 
+    background-color: #e6e7ee;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    place-content: center;
+    justify-content: space-around;
+}
+
+.selector {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+.custom_select {
+    display: inline_block;
+    width: 100%;
+    height: calc(1.5em + 1.2rem + 0.0625rem);
+    padding: 0.6rem 1.75rem 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476A;
+    vertical-align: middle;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23525480' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no_repeat right 0.75rem center/8px 10px;
+    background-color: #dddddc;
+    border-radius: 10px;
+    border: 0.0625rem solid #dddddc;
+    box-shadow: inset 20px 20px 60px #dddddc,
+                inset -20px -20px 60px #ffffff;
+}
