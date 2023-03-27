@@ -26,7 +26,7 @@ export default function SearchBar() {
     <div className={Searchbar.searchBar}>
         <div className={Searchbar.selector}>
             <label htmlFor="city">City</label>
-            <select className={Searchbar.custom_select} name="city" id="city" onChange={() => setCity(event.target.value)}>
+            <select className={`${Searchbar.custom_select} ${Neumorphic.selector_box_shadow}`} name="city" id="city" onChange={() => setCity(event.target.value)}>
                 <option value="default">Select a city</option>
                 <option value="newyork">New York</option>
                 <option value="losangeles">Los Angeles</option>
@@ -36,11 +36,11 @@ export default function SearchBar() {
         </div>
         <div className={Searchbar.selector}>
             <label htmlFor="from">From</label>
-            <input type="date" id="from" name="from" onChange={() => setFrom(event.target.value)} />
+            <input className={`${Searchbar.custom_date} ${Neumorphic.selector_box_shadow}`} type="date" id="from" name="from" onChange={() => setFrom(event.target.value)} />
         </div>
         <div className={Searchbar.selector}>
             <label htmlFor="from">To</label>
-            <input type="date" id="to" name="to" onChange={() => setTo(event.target.value)} />
+            <input className={`${Searchbar.custom_date} ${Neumorphic.selector_box_shadow}`} type="date" id="to" name="to" onChange={() => setTo(event.target.value)} />
         </div>
         <div className={Searchbar.selector}>
             <label htmlFor="Stars">Stars</label>
@@ -55,7 +55,7 @@ export default function SearchBar() {
             </div>
         </div>
     </div>
-    <button onClick={handleQuery}>Search</button>
+    <button className={Searchbar.search_button} onClick={handleQuery}>Search</button>
 
     </>       
   )

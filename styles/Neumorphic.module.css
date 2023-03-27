@@ -175,3 +175,21 @@
     border-bottom: 0;
     border-top: 6px solid #ECF0F3;
 }
+
+.selector_box_shadow { 
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.button{
+    border: none;
+    background-color: #f8f8f8;
+    border-radius: 0.2rem;
+    margin: 0.5rem;
+    color: #678978;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;    
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    cursor: pointer;
+}
