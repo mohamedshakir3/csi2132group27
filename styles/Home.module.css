@@ -10,9 +10,17 @@
 
 }
 
+.absolute_searchbar{
+    position: absolute;
+    top: 65%;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
 
 .center{
     display: grid;
     place-items: center;
-    row-gap: 1.5rem;
+    /* row-gap: 1.5rem; */
 }
+

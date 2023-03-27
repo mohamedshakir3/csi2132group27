@@ -7,14 +7,11 @@ import SearchBar from '../styles/SearchBar.module.css'
 export default function Counter ({minCount, maxCount, updateParentState}){
     const [count, setCount] = useState(0)
 
-    //Q: How do remove origin
-
-
     const handleIncrement = (inc) => {
         if (count + inc < minCount) return
         if(count + inc > maxCount) return
         setCount(count + inc)
-        // updateParentState(count + inc)
+        updateParentState(count + inc)
     }
 
     

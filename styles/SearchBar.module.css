@@ -12,6 +12,7 @@
     place-items: center;
     place-content: center;
     justify-content: space-around;
+
 }
 
 .selector {
@@ -57,7 +58,8 @@
     border-radius: 2rem;
     color: #ffffff;
     font-size: 1.1rem;
-
+    
+    cursor: pointer;
 
 }
 
