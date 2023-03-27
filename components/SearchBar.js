@@ -35,11 +35,11 @@ export default function SearchBar() {
             </select>
         </div>
         <div className={Searchbar.selector}>
-            <label htmlFor="from">From</label>
+            <label htmlFor="from">Check-in</label>
             <input className={`${Searchbar.custom_date} ${Neumorphic.selector_box_shadow}`} type="date" id="from" name="from" onChange={() => setFrom(event.target.value)} />
         </div>
         <div className={Searchbar.selector}>
-            <label htmlFor="from">To</label>
+            <label htmlFor="to">Check-out</label>
             <input className={`${Searchbar.custom_date} ${Neumorphic.selector_box_shadow}`} type="date" id="to" name="to" onChange={() => setTo(event.target.value)} />
         </div>
         <div className={Searchbar.selector}>
