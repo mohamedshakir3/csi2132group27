@@ -1,0 +1,252 @@
+.max_btn {
+    background-color: rgb(245, 246, 245);
+    box-shadow: 0px 11px 16px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 394px;
+    top: 483px;
+    width: 28px;
+    height: 28px;
+    z-index: 53;
+  }
+  
+  .min_btn {
+    background-color: rgb(245, 246, 245);
+    box-shadow: 0px 11px 16px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 268px;
+    top: 483px;
+    width: 28px;
+    height: 28px;
+    z-index: 52;
+  }
+  
+  .accordion_minus {
+    background-color: rgb(245, 246, 245);
+    box-shadow: 0px 10px 13px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 1554px;
+    top: 351px;
+    width: 54px;
+    height: 50px;
+    z-index: 51;
+  }
+  
+  .accordion_plus {
+    background-color: rgb(245, 246, 245);
+    box-shadow: 0px 10px 13px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 1545px;
+    top: 755px;
+    width: 54px;
+    height: 50px;
+    z-index: 50;
+  }
+  
+  .back_btn {
+    background-color: rgb(245, 246, 245);
+    box-shadow: 0px 10px 13px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 1434px;
+    top: 137px;
+    width: 166px;
+    height: 50px;
+    z-index: 49;
+  }
+  
+  .book_now_btn {
+    border-radius: 23px;
+    background-color: rgb(103, 137, 120);
+    box-shadow: -3.94px -3.078px 12px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 610px;
+    top: 546px;
+    width: 162px;
+    height: 52px;
+    z-index: 46;
+  }
+  
+  .search_btn {
+    border-radius: 23px;
+    background-color: rgb(103, 137, 120);
+    box-shadow: -3.94px -3.078px 12px 0px rgba(103, 137, 120, 0.35);
+    position: absolute;
+    left: 1240px;
+    top: 137px;
+    width: 162px;
+    height: 52px;
+    z-index: 45;
+  }
+  
+  .sea_view_box {
+    border-radius: 11px;
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 233px;
+    top: 776px;
+    width: 35px;
+    height: 33px;
+    z-index: 44;
+  }
+  
+  .Mountain_view_box {
+    border-radius: 11px;
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 233px;
+    top: 710px;
+    width: 35px;
+    height: 33px;
+    z-index: 43;
+  }
+  
+  .persons_box {
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 364px;
+    top: 607px;
+    width: 88px;
+    height: 49px;
+    z-index: 38;
+  }
+  
+  .green_scroll {
+    background-color: rgb(103, 137, 120);
+    box-shadow: inset 0.244px -6.996px 10px 0px rgba(58, 80, 69, 0.24);
+    position: absolute;
+    left: 1668px;
+    top: 393px;
+    width: 21px;
+    height: 137px;
+    z-index: 37;
+  }
+  
+  .green_slider {
+    background-color: rgb(103, 137, 120);
+    box-shadow: inset 0.244px -6.996px 10px 0px rgba(58, 80, 69, 0.24);
+    position: absolute;
+    left: 277px;
+    top: 487px;
+    width: 136px;
+    height: 21px;
+    z-index: 36;
+  }
+  
+  .price_range_box {
+    border-radius: 14px;
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 266px;
+    top: 409px;
+    width: 148px;
+    height: 39px;
+    z-index: 35;
+  }
+  
+  .scroll_bar {
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 1668px;
+    top: 343px;
+    width: 21px;
+    height: 657px;
+    z-index: 34;
+  }
+  
+  .slider_container {
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 240px;
+    top: 487px;
+    width: 200px;
+    height: 21px;
+    z-index: 33;
+  }
+  
+  .rooms_box {
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 268px;
+    top: 911px;
+    width: 151px;
+    height: 49px;
+    z-index: 32;
+  }
+  
+  
+  .stars_box {
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 240px;
+    top: 607px;
+    width: 88px;
+    height: 49px;
+    z-index: 31;
+  }
+  
+  .search_box {
+    border-radius: 47px;
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 331px;
+    top: 111px;
+    width: 858px;
+    height: 97px;
+    z-index: 30;
+  }
+  
+  .Filter_panel {
+    border-radius: 43px;
+    background-color: rgb(247, 248, 247);
+    box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+    position: absolute;
+    left: 217px;
+    top: 285px;
+    width: 259px;
+    height: 742px;
+    z-index: 6;
+  }
+  
+  .search_panel {
+    border-radius: 43px;
+    background-color: rgb(247, 248, 247);
+    box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+    position: absolute;
+    left: 217px;
+    top: 64px;
+    width: 1512px;
+    height: 186px;
+    z-index: 5;
+  }
+  
+  .compact_card {
+    border-radius: 56px;
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 542px;
+    top: 727px;
+    width: 1094px;
+    height: 220px;
+    z-index: 4;
+  }
+  
+  .extended_card {
+    border-radius: 56px;
+    background-color: rgb(245, 246, 245);
+    box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43);
+    position: absolute;
+    left: 542px;
+    top: 323px;
+    width: 1100px;
+    height: 309px;
+    z-index: 3;
+  }

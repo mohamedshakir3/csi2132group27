@@ -1,11 +1,13 @@
 import Searchbar from '../styles/SearchBar.module.css'
 import Neumorphic from '../styles/Neumorphic.module.css'
 import Counter from '@/components/Counter'
-
 import { useState } from 'react'
 
-export default function SearchBar() {
+import { cities }from '../public/Cities.js'
 
+import { Hint } from 'react-autocomplete-hint'
+
+export default function SearchBar() {
 
 
     const [city, setCity] = useState("")
@@ -13,7 +15,6 @@ export default function SearchBar() {
     const [to, setTo] = useState("")
     const [stars, setStars] = useState(0)
     const [persons, setPersons] = useState(0)
-
 
 
 
@@ -25,14 +26,24 @@ export default function SearchBar() {
     <>
     <div className={Searchbar.searchBar}>
         <div className={Searchbar.selector}>
-            <label htmlFor="city">City</label>
-            <select className={`${Searchbar.custom_select} ${Neumorphic.selector_box_shadow}`} name="city" id="city" onChange={() => setCity(event.target.value)}>
+        <label htmlFor="city">City</label>
+
+        <Hint options={cities} allowTabFill>
+            <input 
+                className={`${Searchbar.custom_select} ${Neumorphic.selector_box_shadow}`}
+                value={city}
+                onChange = {e => setCity(e.target.value)}
+                placeholder="Where are you staying?"
+            />
+        </Hint>
+            
+            {/* <select className={`${Searchbar.custom_select} ${Neumorphic.selector_box_shadow}`} name="city" id="city" onChange={() => setCity(event.target.value)}>
                 <option value="default">Select a city</option>
                 <option value="newyork">New York</option>
                 <option value="losangeles">Los Angeles</option>
                 <option value="chicago">Chicago</option>
                 <option value="houston">Houston</option>
-            </select>
+            </select> */}
         </div>
         <div className={Searchbar.selector}>
             <label htmlFor="from">Check-in</label>

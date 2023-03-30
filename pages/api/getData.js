@@ -4,7 +4,7 @@ require('dotenv').config()
 
 export default async function handler(req, res) {
 
-    const connection = mysql.createConnection(process.env.DATABASE_URL);
+    const connection = await mysql.createConnection(process.env.DATABASE_URL);
     
     try{
         

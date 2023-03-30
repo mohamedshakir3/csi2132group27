@@ -2,7 +2,7 @@ import home from '../styles/Home.module.css'
 import SearchBar from '@/components/SearchBar'
 import CarouselContainer from '../components/CarouselContainer'
 import Header from '../components/Header'
-import Head from 'next/head'
+
 export default function Home() {
   return (
     <>
