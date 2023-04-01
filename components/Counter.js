@@ -1,6 +1,5 @@
 
 import { useState } from 'react'
-import { useEffect } from 'react'
 import Neumorphic from '../styles/Neumorphic.module.css'
 import SearchBar from '../styles/SearchBar.module.css'
 

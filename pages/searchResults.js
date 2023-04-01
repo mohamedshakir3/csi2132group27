@@ -1,7 +1,5 @@
-import home from '../styles/Home.module.css'
 import SearchResults from '../styles/SearchResults.module.css'
 import Accordian from '../components/Accordian' 
-import Slider from '../components/Slider'
 import { useState, useEffect } from 'react';
 
 export default function searchResults(){
