@@ -2,12 +2,113 @@
 .accordian {
     --width: 100%;
     background-color: #f8f8f8;
-    height: 220px; 
+    height: 200px; 
     width: 100%; 
     /* box-shadow: inset -5px -5px 2px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(190, 190, 190, 0.8);   */
     box-shadow: inset 4.384px 8.988px 10px 0px rgba(156,154,154,0.43),
                 inset -10px -10px 20px rgba(255, 255, 255, 01);
-    border-radius: 56px;
-    display: grid;
+    border-radius: 2.5rem;
+    display: grid; 
     place-items: center;
+
+
+
+}
+
+.grid{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 98%;
+}
+
+
+
+.image_wrapper{
+    grid-column: 1 / 2;
+    height: 180px;
+    border-radius: 2.5rem;
+    background-image: url(../images/image1.jpg);
+    background-size: cover;
+}
+
+.hotel_info {
+    grid-column: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    color: #bbbbbc;
+    padding: 1rem;
+    line-height: 2rem;
+
+}
+
+.country_tag{
+    display: block;
+    color: #bbbbbc;
+    font-weight: 200;
+
+}
+
+.hotel_name{
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    color: #678978;
+    vertical-align: middle;
+    line-height: 3rem;
+
+}
+
+.stars{
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+
+.room_info{
+    color: #bbbbbc;
+    letter-spacing: 0.5rem;
+}
+
+.beds,
+.people {
+    color: #678978;
+    margin-right: 0.5rem;
+
+}
+
+.price {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #678978;
+}
+
+.quad {
+    display:flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.toggle{
+    color: #678978;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: rgb(245, 246, 245);
+    box-shadow: 0px 10px 13px 0px rgba(103, 137, 120, 0.35);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border:none;
+}
+.extendable {
+    color: #678978;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    vertical-align: top;
+    
+}
+
+.nightly {
+    font-size: 1.1rem;
 }

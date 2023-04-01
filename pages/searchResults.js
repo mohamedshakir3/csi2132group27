@@ -2,11 +2,23 @@ import home from '../styles/Home.module.css'
 import SearchResults from '../styles/SearchResults.module.css'
 import Accordian from '../components/Accordian' 
 import Slider from '../components/Slider'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function searchResults(){
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const getData = async() =>{
+            const response = await fetch('http://localhost:3000/api/getData')
+            const res = await response.json()
+            setData(res.results)
+            console.log(res.results)
+        }
+        getData()
+    },[])
+
     
-    const [sliderValue, setSliderValue] = useState([{min: 0, max: 10}]);
 
     return (
         <>
@@ -29,11 +41,14 @@ export default function searchResults(){
 
                     </div>
                     <div className={SearchResults.body}>
+                        {data.map((item) => {
+                            return <Accordian key={item.hotel_id} data={item} />
+                        })}
+                        {/* <Accordian content={"Example Content"} />
                         <Accordian content={"Example content"} />
                         <Accordian content={"Example content"} />
                         <Accordian content={"Example content"} />
-                        <Accordian content={"Example content"} />
-                        <Accordian content={"Example content"} />
+                        <Accordian content={"Example content"} /> */}
 
                     </div>
                 </section>
