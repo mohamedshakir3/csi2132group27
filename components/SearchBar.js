@@ -1,3 +1,4 @@
+import React from 'react'
 import Searchbar from '../styles/SearchBar.module.css'
 import Neumorphic from '../styles/Neumorphic.module.css'
 import Counter from '@/components/Counter'
@@ -5,6 +6,7 @@ import { useState } from 'react'
 
 import { cities }from '../public/Cities.js'
 
+import Router from 'next/router'
 import { Hint } from 'react-autocomplete-hint'
 
 export default function SearchBar() {
@@ -17,10 +19,6 @@ export default function SearchBar() {
     const [persons, setPersons] = useState(0)
 
 
-
-    const handleQuery = () => {
-        console.log(city + " " + from + " " + to + " " + stars+ " " + persons)
-    }
 
   return (
     <>
@@ -37,13 +35,6 @@ export default function SearchBar() {
             />
         </Hint>
             
-            {/* <select className={`${Searchbar.custom_select} ${Neumorphic.selector_box_shadow}`} name="city" id="city" onChange={() => setCity(event.target.value)}>
-                <option value="default">Select a city</option>
-                <option value="newyork">New York</option>
-                <option value="losangeles">Los Angeles</option>
-                <option value="chicago">Chicago</option>
-                <option value="houston">Houston</option>
-            </select> */}
         </div>
         <div className={Searchbar.selector}>
             <label htmlFor="from">Check-in</label>
@@ -66,8 +57,17 @@ export default function SearchBar() {
             </div>
         </div>
     </div>
-    <button className={Searchbar.search_button} onClick={handleQuery}>Search</button>
-
+        <button className={Searchbar.search_button} onClick={()=>
+        Router.push({
+            pathname: '/searchResults',
+            query:  {
+                city, 
+                from,
+                to,
+                stars,
+                persons
+            }
+        })}>Search</button> 
     </>       
   )
 }

@@ -17,7 +17,7 @@ export default function Accordian({data}){
                 <span className={AccordianStyles.country_tag}>{data.country}</span>
                 <span className={AccordianStyles.hotel_name}>{data.hotel_name} 
                     <span className={AccordianStyles.stars}>
-                        {[...Array(data.stars)].map((e, i) => <VscStarFull/>)}
+                        {[...Array(data.stars)].map((e, i) => <VscStarFull key={i}/>)}
                     </span>
                 </span>
                 <span className={AccordianStyles.room_info}>

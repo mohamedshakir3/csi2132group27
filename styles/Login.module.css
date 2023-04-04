@@ -1,0 +1,204 @@
+.background {
+  background-image: url(../public/ehotels-background-image.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.form_login {
+  border-radius: 3rem;
+  width: 40rem;
+  height: 33rem;
+  background-color: #f8f8f8f8;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.form_register {
+  border-radius: 3rem;
+  width: 50rem;
+  height: 40rem;
+  background-color: #f8f8f8f8;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.registration_form {
+  display: grid;
+  width: 100%;
+}
+
+.form_wrapper {
+  display: grid;
+  place-items: center;
+  grid-auto-rows: min-content;
+  width: 60%;
+  gap: 3rem;
+}
+
+.login_btn {
+  width: 170px;
+  height: 50px;
+  border-radius: 1.2rem;
+  border: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: rgb(103, 137, 120);
+  box-shadow: -3.94px -3.078px 12px 0px rgba(103, 137, 120, 0.35);
+}
+
+.register_btn {
+  width: 200px;
+  height: 50px;
+  border-radius: 1.2rem;
+  border: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: rgb(103, 137, 120);
+  box-shadow: -3.94px -3.078px 12px 0px rgba(103, 137, 120, 0.35);
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgb(103, 137, 120);
+}
+
+.password,
+.username {
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+  border: none;
+  padding: 0 0 0 2rem;
+  height: 50px;
+  width: 220px;
+  color: rgb(103, 137, 120);
+  box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43),
+    inset -8px -8px 8px white;
+  border-radius: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.name {
+  border: none;
+  padding: 0 0 0 2rem;
+  height: 50px;
+  width: 270px;
+  color: rgb(103, 137, 120);
+  box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43),
+    inset -8px -8px 8px white;
+  border-radius: 1.5rem;
+}
+
+.address {
+  border: none;
+  padding: 0 0 0 2rem;
+  height: 50px;
+  width: 270px;
+  color: rgb(103, 137, 120);
+  box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43),
+    inset -8px -8px 8px white;
+  border-radius: 1.5rem;
+}
+
+.city,
+.province,
+.postal_code {
+  border: none;
+  padding: 0 0 0 1rem;
+  height: 50px;
+  width: 130px;
+  color: rgb(103, 137, 120);
+  box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43),
+    inset -8px -8px 8px white;
+  border-radius: 1.5rem;
+}
+.SSN,
+.country {
+  border: none;
+  padding: 0 0 0 2rem;
+  height: 50px;
+  width: 120px;
+  color: rgb(103, 137, 120);
+  box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43),
+    inset -8px -8px 8px white;
+  border-radius: 1.5rem;
+}
+
+.name,
+.address,
+.province,
+.city,
+.postal_code,
+.email {
+  margin-bottom: 3rem;
+}
+
+.password::placeholder,
+.username::placeholder,
+.name::placeholder,
+.SSN::placeholder,
+.address::placeholder,
+.city::placeholder,
+.province::placeholder,
+.postal_code::placeholder,
+.country::placeholder,
+.email::placeholder,
+.signup_password::placeholder {
+  color: rgb(103, 137, 120);
+  font-weight: 400;
+}
+
+.password:focus,
+.username:focus {
+  outline: none;
+}
+
+.form_row {
+  display: flex;
+  justify-content: space-between;
+}
+.form_row_centered {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup {
+  font-weight: 100;
+  color: rgb(103, 137, 120);
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.email,
+.signup_password {
+  border: none;
+  padding: 0 0 0 2rem;
+  height: 50px;
+  width: 180px;
+  color: rgb(103, 137, 120);
+  box-shadow: inset 3.069px 6.292px 10px 0px rgba(156, 154, 154, 0.43),
+    inset -8px -8px 8px white;
+  border-radius: 1.5rem;
+}
