@@ -51,8 +51,7 @@ export default function RegistrationForm({ users }) {
       post
     )
     const response = await res.json()
-    console.log(response)
-    if (response === "success") {
+    if (response.message === "success") {
       console.log("success")
       signIn({
         email,
@@ -60,7 +59,7 @@ export default function RegistrationForm({ users }) {
         id: 3,
         type: "customer",
       })
-      Router.push("https://csi2132group27.vercel.app/")
+      Router.push("/")
     }
   }
 
