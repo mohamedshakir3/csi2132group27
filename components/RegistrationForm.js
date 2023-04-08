@@ -54,10 +54,14 @@ export default function RegistrationForm({ users }) {
     if (response.message === "success") {
       console.log("success")
       signIn({
-        email,
-        password,
-        id: 3,
+        name: name,
+        email: email,
+        ssn: SSN,
+        address: address,
+        password: password,
+        id: response.results.insertId,
         type: "customer",
+        password: password,
       })
       Router.push("/")
     }

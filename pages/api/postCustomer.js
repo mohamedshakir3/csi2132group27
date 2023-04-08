@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       body.password,
     ],
   })
-
+  const id = insert.insertId
   res
     .status(200)
     .json({ message: insert.insertId ? "success" : error, results: insert })
