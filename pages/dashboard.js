@@ -159,19 +159,27 @@ export default function dashboard({ customers, bookings, rentings, rooms }) {
 }
 
 export async function getServerSideProps() {
-  const customerRes = await fetch("http://localhost:3000/api/getCustomers")
+  const customerRes = await fetch(
+    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/api/getCustomers"
+  )
   const customerData = await customerRes.json()
   const customers = customerData.results
 
-  const bookingRes = await fetch("http://localhost:3000/api/getBookings")
+  const bookingRes = await fetch(
+    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/api/getBookings"
+  )
   const bookingData = await bookingRes.json()
   const bookings = bookingData.results
 
-  const rentingRes = await fetch("http://localhost:3000/api/getRentings")
+  const rentingRes = await fetch(
+    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/getRentings"
+  )
   const rentingData = await rentingRes.json()
   const rentings = rentingData.results
 
-  const roomRes = await fetch("http://localhost:3000/api/getRooms")
+  const roomRes = await fetch(
+    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/api/getRooms"
+  )
   const roomData = await roomRes.json()
   const rooms = roomData.results
 
