@@ -75,7 +75,7 @@ export default function searchResults({ rooms }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/api/getRooms")
 
   const result = await res.json()
