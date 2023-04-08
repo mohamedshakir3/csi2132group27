@@ -60,7 +60,7 @@ export default function RegistrationForm({ users }) {
         id: 3,
         type: "customer",
       })
-      Router.push("/")
+      Router.push("https://csi2132group27.vercel.app/")
     }
   }
 
