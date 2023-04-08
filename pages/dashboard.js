@@ -159,7 +159,7 @@ export default function dashboard({ customers, bookings, rentings, rooms }) {
 }
 
 export async function getStaticProps() {
-  const customerRes = await fetch("http://localhost:3000/api/getCustomers")
+  const customerRes = await fetch("/api/getCustomers")
   const customerData = await customerRes.json()
   const customers = customerData.results
 
