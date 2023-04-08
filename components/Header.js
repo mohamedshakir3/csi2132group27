@@ -1,5 +1,6 @@
 import HeaderStyles from "../styles/Header.module.css"
 import LoginBtn from "./LoginBtn"
+import Profile from "./Profile"
 
 export default function Header({ status }) {
   return (
@@ -9,7 +10,7 @@ export default function Header({ status }) {
         <span>Placeholder text</span>
       </div>
       <div className={HeaderStyles.login_btn_container}>
-        {status ? <h1>You're logged in!</h1> : <LoginBtn />}
+        {status ? <Profile /> : <LoginBtn />}
       </div>
     </div>
   )

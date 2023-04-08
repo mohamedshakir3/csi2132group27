@@ -20,8 +20,10 @@
     "react": "18.2.0",
     "react-autocomplete-hint": "^2.0.0",
     "react-bootstrap": "^2.7.2",
+    "react-contenteditable": "^3.3.7",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "sanitize-html": "^2.10.0",
     "sequelize": "^6.30.0"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 .accordian {
   background-color: #f8f8f8;
-  height: 200px;
-  width: 100%;
+  height: 120px;
+  width: 80%;
   box-shadow: inset 4.384px 8.988px 10px 0px rgba(156, 154, 154, 0.43),
     inset -10px -10px 20px rgba(255, 255, 255, 01);
   border-radius: 2.5rem;
@@ -12,20 +12,12 @@
 .grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 98%;
 }
 
-.image_wrapper {
-  grid-column: 1 / 2;
-  height: 180px;
-  border-radius: 2.5rem;
-  background-image: url(../public/image1.jpg);
-  background-size: cover;
-}
-
 .hotel_info {
-  grid-column: 2 / 4;
+  grid-column: 1 / 2;
   display: flex;
   flex-direction: column;
   color: #bbbbbc;
@@ -44,7 +36,7 @@
   font-weight: 600;
   color: #678978;
   vertical-align: middle;
-  line-height: 3rem;
+  /* line-height: 3rem;  */
 }
 
 .stars {
@@ -73,8 +65,9 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
+  grid-column: 3 / 4;
 }
 
 .toggle {
@@ -98,4 +91,21 @@
 
 .nightly {
   font-size: 1.1rem;
+}
+.center_quad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.check_in {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #678978;
+}
+
+.date {
+  font-size: 1rem;
+  color: #678978;
 }

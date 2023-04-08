@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #dddddc;
+  font-weight: 600;
+  width: 90%;
+}
+.row {
+  display: flex;
+  border-bottom: 1px solid #dddddc;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.search_bar {
+  height: 3rem;
+  border-radius: 20px;
+  width: 90%;
+  border: none;
+  background-color: rgb(245, 246, 245);
+  box-shadow: inset 2px 4px 10px 0px rgba(156, 154, 154, 0.43);
+  padding-left: 10px;
+}
+
+.search_bar:focus {
+  outline: none;
+}

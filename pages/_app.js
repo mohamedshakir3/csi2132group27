@@ -6,6 +6,7 @@ export const UserContext = createContext({
   signIn: () => {},
   signOut: () => {},
   loggedIn: false,
+  updateUser: () => {},
 })
 
 export default function App({ Component, pageProps }) {
@@ -22,23 +23,33 @@ export default function App({ Component, pageProps }) {
     }
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(user))
-  }, [user])
+  // useEffect(() => {
+  //   localStorage.setItem("user", JSON.stringify(user))
+  // }, [user])
 
   const signOut = () => {
     setUser(null)
     setLoggedIn(false)
+    localStorage.removeItem("user")
   }
 
   const signIn = (user) => {
     setUser(user)
     setLoggedIn(true)
+    localStorage.setItem("user", JSON.stringify(user))
+
     console.log("User logged in:" + user)
   }
 
+  const updateUser = (user) => {
+    console.log(user)
+    localStorage.setItem("user", JSON.stringify(user))
+  }
+
   return (
-    <UserContext.Provider value={{ user, signIn, signOut, loggedIn }}>
+    <UserContext.Provider
+      value={{ user, signIn, signOut, loggedIn, updateUser }}
+    >
       <Component {...pageProps} />
     </UserContext.Provider>
   )

@@ -14,10 +14,14 @@ export default function LoginForm({ users }) {
       if (user.email === username && user.password === password) {
         console.log("User found and passowrd matches.")
         signIn({
+          name: user.name,
           email: user.email,
+          ssn: user.ssn,
+          address: user.street,
           password: user.password,
           id: user.user_id,
           type: user.user_type,
+          password: user.password,
         })
         Router.push("/")
       }

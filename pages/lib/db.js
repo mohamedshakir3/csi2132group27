@@ -10,6 +10,6 @@ export async function query({ query, values = [] }) {
 
     return results
   } catch (error) {
-    res.status(500).json({ error: error.message })
+    return { error }
   }
 }

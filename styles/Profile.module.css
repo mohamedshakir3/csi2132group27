@@ -1,0 +1,51 @@
+.profile_btn {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: #f8f8f8;
+  box-shadow: rgb(221, 221, 220, 0.9) 3px 3px 6px 5px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.profile_image {
+  background-image: url(../public/profile_image.png);
+  background-size: cover;
+  width: 80%;
+  height: 80%;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  box-shadow: 0px 10px 13px 0px rgba(103, 137, 120, 0.35);
+  cursor: pointer;
+}
+
+.dropdown {
+  background-color: #f8f8f8;
+  box-shadow: rgb(221, 221, 220, 0.9) 3px 3px 6px 5px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  width: 200px;
+  height: 150px;
+  border-radius: 1rem;
+  position: absolute;
+  top: 82px;
+  right: 5px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  grid-auto-rows: max-content;
+}
+
+.dropdown_content {
+  height: 80%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.dropdown_row {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #dddddc;
+  padding: 10px 0 10px 0;
+}

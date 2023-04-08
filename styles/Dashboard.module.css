@@ -1,0 +1,246 @@
+.background {
+  background-image: url(../public/ehotels-background-image.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  grid-auto-rows: min-content;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.search_bar {
+  height: 3rem;
+  border-radius: 20px;
+  width: 90%;
+  border: none;
+  background-color: rgb(245, 246, 245);
+  box-shadow: inset 2px 4px 10px 0px rgba(156, 154, 154, 0.43);
+  padding-left: 10px;
+  grid-column: 2 / 3;
+}
+
+.search_bar:focus {
+  outline: none;
+}
+
+.dashboard {
+  background-color: #f8f8f8;
+  box-shadow: rgb(221, 221, 220, 0.9) 3px 3px 6px 5px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  width: 70%;
+  height: 80vh;
+  border-radius: 2.5rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.employee_dashboard {
+  background-color: #f8f8f8;
+  box-shadow: rgb(221, 221, 220, 0.9) 3px 3px 6px 5px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  width: 90%;
+  height: 80vh;
+  border-radius: 2.5rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.userpanel {
+  background-color: #f8f8f8;
+  grid-row: 1 / 5;
+  width: 85%;
+  height: 95%;
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 1rem;
+}
+
+.employee_userpanel {
+  background-color: #f8f8f8;
+  grid-row: 1 / 4;
+  grid-column: 1/ 2;
+  width: 90%;
+  height: 95%;
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  grid-auto-rows: min-content;
+}
+
+.Bookings {
+  background-color: #f8f8f8;
+  grid-column: 2 /6;
+  grid-row: 1 / 4;
+  width: 90%;
+  height: 92%;
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  place-items: center;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.employee_bookings {
+  background-color: #f8f8f8;
+  grid-column: 2 /6;
+  grid-row: 1 / 4;
+  width: 90%;
+  height: 92%;
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(4, 1fr);
+  padding: 1rem;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 95%;
+  grid-auto-rows: min-content;
+  gap: 3rem;
+  grid-row: 2 / 5;
+  overflow-y: scroll;
+}
+
+.renting_container {
+  display: grid;
+  place-items: center;
+  width: 95%;
+  height: 15rem;
+  gap: 1rem;
+  grid-row: 2/4;
+  overflow-y: scroll;
+}
+
+.toggle {
+  color: #678978;
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-color: rgb(245, 246, 245);
+  box-shadow: 0px 10px 13px 0px rgba(103, 137, 120, 0.35);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  grid-column: 3 / 4;
+}
+
+.grid_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  justify-items: center;
+}
+
+.renting {
+  background-color: #f8f8f8;
+  grid-column: 2 / 6;
+  grid-row: 4 / 6;
+  width: 90%;
+  height: 92%;
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  place-items: center;
+  grid-auto-rows: min-content;
+}
+
+.employee_renting {
+  background-color: #f8f8f8;
+  grid-column: 2 / 6;
+  grid-row: 4 / 6;
+  width: 90%;
+  height: 85%;
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-rows: min-content;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  color: #678978;
+  font-weight: 500;
+  border-radius: 4px;
+  border-bottom: 1px solid #dddddc;
+}
+.row_center {
+  display: flex;
+  justify-content: center;
+}
+
+.update_btn {
+  width: 80%;
+  height: 3rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #f8f8f8f8;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  cursor: pointer;
+  color: #678978;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  height: 2rem;
+}
+
+.user_search {
+  grid-column: 1 / 2;
+  grid-row: 4 / 6;
+  background-color: #f8f8f8;
+  width: 85%;
+  height: calc(95% - 2rem);
+  border-radius: 2rem;
+  box-shadow: 2.783px 19.805px 35px 0px rgba(103, 137, 120, 0.24);
+  display: grid;
+  padding-top: 1.5rem;
+  grid-auto-rows: min-content;
+  gap: 1rem;
+}
+.header {
+  display: grid;
+  height: 8rem;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.home {
+  border: none;
+  background-color: #f8f8f8;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  color: #678978;
+  height: 3rem;
+  width: 8rem;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  cursor: pointer;
+}

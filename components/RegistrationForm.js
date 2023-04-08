@@ -41,7 +41,7 @@ export default function RegistrationForm({ users }) {
         state,
         country,
         ssn: SSN,
-        date_of_reg: new Date().toJSON().slice(0, 19).replace("T", " "),
+        date_of_reg: new Date(),
         email,
         password,
       }),
