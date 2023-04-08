@@ -14,7 +14,7 @@
     "dotenv": "^16.0.3",
     "mysql2": "^3.2.0",
     "net": "^1.0.2",
-    "next": "13.2.4",
+    "next": "^13.2.4",
     "react": "18.2.0",
     "react-autocomplete-hint": "^2.0.0",
     "react-dom": "18.2.0",
