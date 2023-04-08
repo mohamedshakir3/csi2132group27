@@ -172,7 +172,7 @@ export async function getServerSideProps() {
   const bookings = bookingData.results
 
   const rentingRes = await fetch(
-    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/getRentings"
+    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/api/getRentings"
   )
   const rentingData = await rentingRes.json()
   const rentings = rentingData.results
