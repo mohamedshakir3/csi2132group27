@@ -48,9 +48,7 @@ export default function login({ users }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(
-    "https://csi2132group27-ny0b9i29g-mohamedshakir3.vercel.app/api/getUsers"
-  )
+  const res = await fetch("https://csi2132group27.vercel.app/api/getUsers")
   const data = await res.json()
   const users = data.results
   console.log(users)

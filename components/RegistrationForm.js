@@ -46,7 +46,10 @@ export default function RegistrationForm({ users }) {
         password,
       }),
     }
-    const res = await fetch("http://localhost:3000/api/postCustomer", post)
+    const res = await fetch(
+      "https://csi2132group27.vercel.app/api/postCustomer",
+      post
+    )
     const response = await res.json()
     console.log(response)
     if (response === "success") {

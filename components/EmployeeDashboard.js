@@ -69,7 +69,10 @@ export default function EmployeeDashboard({
       }),
     }
 
-    const req = await fetch("http://localhost:3000/api/putCustomer", putData)
+    const req = await fetch(
+      "https://csi2132group27.vercel.app/api/putCustomer",
+      putData
+    )
     const res = await req.json()
     console.log(res)
   }
