@@ -201,10 +201,6 @@ export default function ClientDashboard(props) {
                 />
               )
             })}
-            {/* <BookingCard />
-            <BookingCard />
-            <BookingCard />
-            <BookingCard /> */}
           </div>
         </div>
 
