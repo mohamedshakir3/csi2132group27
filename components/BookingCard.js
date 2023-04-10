@@ -29,7 +29,10 @@ export default function BookingCard({
         active: false,
       }),
     }
-    const res = await fetch("http://localhost:3000/api/updateBooking", put)
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/updateBooking`,
+      put
+    )
 
     const data = await res.json()
     console.log(data)
@@ -37,18 +40,21 @@ export default function BookingCard({
 
   const rentBooking = async () => {
     updateBooking()
-    const res = await fetch("http://localhost:3000/api/postRenting", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        checkout_date: booking.checkout_date,
-        paid_status: false,
-        hotel_id: booking.hotel_id,
-        customer_id: booking.customer_id,
-      }),
-    })
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/postRenting`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          checkout_date: booking.checkout_date,
+          paid_status: false,
+          hotel_id: booking.hotel_id,
+          customer_id: booking.customer_id,
+        }),
+      }
+    )
     const data = await res.json()
     console.log(data)
     updateRentings({

@@ -87,6 +87,7 @@
   height: 50px;
   border-radius: 100%;
   border: none;
+  cursor: pointer;
 }
 .extendable {
   color: #678978;

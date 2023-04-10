@@ -47,7 +47,7 @@ export default function RegistrationForm({ users }) {
       }),
     }
     const res = await fetch(
-      "https://csi2132group27.vercel.app/api/postCustomer",
+      `${process.env.NEXT_PUBLIC_API_URL}/api/postCustomer`,
       post
     )
     const response = await res.json()

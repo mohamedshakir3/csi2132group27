@@ -70,7 +70,7 @@ export default function EmployeeDashboard({
     }
 
     const req = await fetch(
-      "https://csi2132group27.vercel.app/api/putCustomer",
+      `${process.env.NEXT_PUBLIC_API_URL}/api/putCustomer`,
       putData
     )
     const res = await req.json()

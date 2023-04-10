@@ -1,24 +1,60 @@
 import SearchResults from "../styles/SearchResults.module.css"
 import Accordian from "../components/Accordian"
+import Neumorphic from "../styles/Neumorphic.module.css"
+import Searchbar from "../styles/SearchBar.module.css"
+import Link from "next/link"
 import { useRouter } from "next/router"
-import { useState, useEffect } from "react"
-
+import { useState, useEffect, useContext } from "react"
+import Counter from "../components/Counter"
+import { Hint } from "react-autocomplete-hint"
+import { cities } from "../public/Cities.js"
+import { UserContext } from "./_app"
 export default function searchResults({ rooms }) {
+  const { user, signIn, signOut, loggedIn } = useContext(UserContext)
+
   const router = useRouter()
 
   const query = router.query
+  const [city, setCity] = useState("")
 
   const [filter, setFilter] = useState([])
 
   const [searchQuery, setSearchQuery] = useState("")
 
+  const [queryObj, setQueryObj] = useState({
+    city: query.city,
+    stars: query.stars,
+    persons: query.persons,
+    minPrice: 0,
+    maxPrice: 1000,
+    searchBar: "",
+  })
+
   useEffect(() => {
+    console.log(queryObj)
+
     setFilter(
       rooms.filter((item) => {
-        return item.hotel_name.toLowerCase().includes(searchQuery.toLowerCase())
+        return (
+          item.hotel_name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          item.stars >= parseInt(queryObj.stars) &&
+          item.capacity >= parseInt(queryObj.persons) &&
+          item.price >= parseInt(queryObj.minPrice) &&
+          item.price <= parseInt(queryObj.maxPrice)
+        )
       })
     )
-  }, [searchQuery])
+  }, [queryObj])
+
+  const setStars = (value) => {
+    setQueryObj({ ...queryObj, stars: value })
+  }
+  const setPersons = (value) => {
+    setQueryObj({ ...queryObj, persons: value })
+  }
+  const handleChange = (e) => {
+    setQueryObj({ ...queryObj, [e.target.name]: e.target.value })
+  }
 
   useEffect(() => {
     const initialDataFilter = (data) => {
@@ -29,7 +65,7 @@ export default function searchResults({ rooms }) {
         )
       })
     }
-
+    setQueryObj({ ...queryObj, city: query.city })
     try {
       setFilter(initialDataFilter(rooms))
     } catch {}
@@ -44,10 +80,13 @@ export default function searchResults({ rooms }) {
               <input
                 className={SearchResults.search_bar}
                 placeholder="Search"
-                onChange={(e) => setSearchQuery(e.target.value)}
+                name="searchBar"
+                onChange={handleChange}
               />
-              <button className={SearchResults.search_btn}>Search</button>
-              <button className={SearchResults.back_btn}>Home</button>
+              <button className={SearchResults.search_btn}>Views</button>
+              <Link className={SearchResults.back_btn} href="/">
+                Home
+              </Link>
             </div>
             <div className={SearchResults.filters_panel}>
               <h2>Filter</h2>
@@ -56,16 +95,61 @@ export default function searchResults({ rooms }) {
                 <input
                   className={SearchResults.price_range_input}
                   placeholder="Min"
+                  type="number"
+                  name="minPrice"
+                  onChange={(e) => handleChange(e)}
+                  value={queryObj.minPrice}
                 />
                 <input
                   className={SearchResults.price_range_input}
                   placeholder="Max"
+                  type="number"
+                  name="maxPrice"
+                  onChange={(e) => handleChange(e)}
+                  value={queryObj.maxPrice}
                 />
               </div>
+              <h3>Persons</h3>
+
+              <div className={SearchResults.counter}>
+                <Counter
+                  minCount={0}
+                  maxCount={10}
+                  default={parseInt(queryObj.persons)}
+                  updateParentState={setPersons}
+                />
+              </div>
+              <h3>Stars</h3>
+              <div className={SearchResults.counter}>
+                <Counter
+                  minCount={0}
+                  maxCount={5}
+                  defaultValue={parseInt(queryObj.persons)}
+                  updateParentState={setStars}
+                />
+              </div>
+              <h3>City</h3>
+              <Hint options={cities} allowTabFill>
+                <input
+                  className={SearchResults.city}
+                  onChange={handleChange}
+                  name="city"
+                  placeholder="City"
+                  value={queryObj.city}
+                />
+              </Hint>
             </div>
             <div className={SearchResults.body}>
               {filter.map((room) => {
-                return <Accordian key={room.room_id} data={room} />
+                return (
+                  <Accordian
+                    key={room.room_id}
+                    data={room}
+                    customer_id={user?.id}
+                    checkIn={query?.from}
+                    checkOut={query?.to}
+                  />
+                )
               })}
             </div>
           </section>
@@ -76,7 +160,7 @@ export default function searchResults({ rooms }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("https://csi2132group27.vercel.app/api/getRooms")
+  const res = await fetch(`${process.env.API_URL}/api/getRooms`)
 
   const result = await res.json()
   const rooms = result.results

@@ -53,21 +53,14 @@ export default function ClientDashboard(props) {
       ...prev,
       [e.target.name]: e.target.value,
     }))
+    console.log(content)
   }
 
   const updateDB = async () => {
     updateUser(content)
 
     console.log(content)
-    const body = {
-      id: content.user_id,
-      name: content.name,
-      street: content.address,
-      ssn: content.ssn,
-      email: content.email,
-      password: content.password,
-    }
-    console.log(body)
+
     const putData = {
       method: "PUT",
       headers: {
@@ -84,7 +77,7 @@ export default function ClientDashboard(props) {
     }
 
     const req = await fetch(
-      "https://csi2132group27.vercel.app/api/putCustomer",
+      `${process.env.NEXT_PUBLIC_API_URL}/api/putCustomer`,
       putData
     )
     const res = await req.json()

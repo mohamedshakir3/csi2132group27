@@ -2,8 +2,13 @@ import { useState } from "react"
 import Neumorphic from "../styles/Neumorphic.module.css"
 import SearchBar from "../styles/SearchBar.module.css"
 
-export default function Counter({ minCount, maxCount, updateParentState }) {
-  const [count, setCount] = useState(0)
+export default function Counter({
+  minCount,
+  maxCount,
+  defaultValue,
+  updateParentState,
+}) {
+  const [count, setCount] = useState(defaultValue ? parseInt(defaultValue) : 0)
 
   const handleIncrement = (inc) => {
     if (count + inc < minCount) return

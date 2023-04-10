@@ -7,7 +7,6 @@ export default async function handler(req, res) {
   }
 
   const body = req.body
-
   const insert = await query({
     query:
       "INSERT INTO Booking (hotel_id, customer_id, booking_date, checkin_date,active, room_id, checkout_date) VALUES (?, ?, ?, ?, ?, ?, ?)",
@@ -21,9 +20,7 @@ export default async function handler(req, res) {
       new Date(body.checkout_date.toString()),
     ],
   })
-
-  console.log(insert)
   res
     .status(200)
-    .json({ message: insert.insertId ? "success" : { results: insert } })
+    .json({ message: insert.insertId ? "success" : { error, results: insert } })
 }
