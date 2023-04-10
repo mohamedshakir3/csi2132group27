@@ -7,7 +7,6 @@ import Router from "next/router"
 
 export default function Accordian({ data, customer_id, checkIn, checkOut }) {
   const [success, setSuccess] = useState(false)
-  console.log(customer_id)
   const createBooking = async () => {
     if (!customer_id) return Router.push("/login")
     const booking = {

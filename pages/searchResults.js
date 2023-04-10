@@ -36,7 +36,9 @@ export default function searchResults({ rooms }) {
     setFilter(
       rooms.filter((item) => {
         return (
-          item.hotel_name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          item.hotel_name
+            .toLowerCase()
+            .includes(queryObj.searchBar.toLowerCase()) &&
           item.stars >= parseInt(queryObj.stars) &&
           item.capacity >= parseInt(queryObj.persons) &&
           item.price >= parseInt(queryObj.minPrice) &&
