@@ -14,6 +14,7 @@ export default function ClientDashboard(props) {
   const [filterBookings, setFilterBookings] = useState([])
   const [filterRentings, setFilterRentings] = useState([])
 
+  const [success, setSuccess] = useState(false)
   const [content, setContent] = useState({})
 
   const { user, signIn, signOut, loggedIn, updateUser } =
@@ -37,7 +38,6 @@ export default function ClientDashboard(props) {
         return booking.customer_id === currentUser?.id
       })
     )
-    console.log(filterBookings)
   }, [bookings, currentUser])
 
   useEffect(() => {
@@ -46,20 +46,17 @@ export default function ClientDashboard(props) {
         return renting.customer_id === currentUser?.id
       })
     )
-    console.log(filterRentings)
   }, [rentings, currentUser])
   const handleChange = (e) => {
     setContent((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }))
-    console.log(content)
   }
 
   const updateDB = async () => {
+    setEditable(false)
     updateUser(content)
-
-    console.log(content)
 
     const putData = {
       method: "PUT",
@@ -81,7 +78,9 @@ export default function ClientDashboard(props) {
       putData
     )
     const res = await req.json()
-    console.log(res)
+    if (res.response.message === "success") {
+      setSuccess(true)
+    }
   }
 
   const [editable, setEditable] = useState(false)
@@ -104,8 +103,8 @@ export default function ClientDashboard(props) {
                 className={DashboardStyles.input}
                 disabled={!editable}
                 onChange={handleChange}
-                value={content.name || ""}
-                name="username"
+                value={content.name}
+                name="name"
               />
             </span>
             <span style={{ cursor: "pointer" }}>
@@ -167,7 +166,7 @@ export default function ClientDashboard(props) {
                 disabled={!editable}
                 value={content.address}
                 onChange={handleChange}
-                name="street"
+                name="address"
               />
             </span>
 
@@ -180,6 +179,13 @@ export default function ClientDashboard(props) {
             <button onClick={updateDB} className={DashboardStyles.update_btn}>
               Update Info
             </button>
+          </span>
+          <span className={DashboardStyles.row_center}>
+            {success ? (
+              <span className={DashboardStyles.success}>Success!</span>
+            ) : (
+              ""
+            )}
           </span>
         </div>
         <div className={DashboardStyles.Bookings}>

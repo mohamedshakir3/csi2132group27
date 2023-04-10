@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
   const insert = await query({
     query:
-      "INSERT INTO Customer (customer_name, street, postal_code, city, state, country, ssn, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      "INSERT INTO Customer (customer_name, street, postal_code, city, state, country, ssn, date_of_reg, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
     values: [
       body.name,
       body.street,
@@ -19,6 +19,7 @@ export default async function handler(req, res) {
       body.state,
       body.country,
       body.ssn,
+      new Date(body.date_of_reg.toString()),
       body.email,
       body.password,
     ],
