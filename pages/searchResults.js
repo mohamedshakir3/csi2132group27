@@ -19,8 +19,6 @@ export default function searchResults({ rooms }) {
 
   const [filter, setFilter] = useState([])
 
-  const [searchQuery, setSearchQuery] = useState("")
-
   const [queryObj, setQueryObj] = useState({
     city: query.city,
     stars: query.stars,
@@ -31,8 +29,6 @@ export default function searchResults({ rooms }) {
   })
 
   useEffect(() => {
-    console.log(queryObj)
-
     setFilter(
       rooms.filter((item) => {
         return (

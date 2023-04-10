@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }) {
   }
 
   const updateUser = (user) => {
-    console.log(user)
+    setUser(user)
     localStorage.setItem("user", JSON.stringify(user))
   }
 
