@@ -11,6 +11,7 @@ export default function LoginForm({ users }) {
 
   const checkCredentials = () => {
     users.forEach((user) => {
+      console.log(user)
       if (user.email === username && user.password === password) {
         console.log("User found and passowrd matches.")
         signIn({

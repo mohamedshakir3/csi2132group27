@@ -46,6 +46,7 @@ export default function searchResults({ rooms }) {
           item.capacity >= parseInt(queryObj.persons) &&
           item.price >= parseInt(queryObj.minPrice) &&
           item.price <= parseInt(queryObj.maxPrice)
+          //(bookings.filter(booking => booking.room_id === item.room_id).length > 0) ? (bookings.filter(booking => booking.room_id === item.room_id)[0].checkIn > query.checkin_date && bookings.filter(booking => booking.room_id === item.room_id)[0].checkout < query.checkout_date) ? false  : true : true
         )
       })
     )

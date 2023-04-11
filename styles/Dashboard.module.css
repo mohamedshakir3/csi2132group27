@@ -221,6 +221,10 @@
   padding-top: 1.5rem;
   grid-auto-rows: min-content;
   gap: 1rem;
+  overflow-y: scroll;
+}
+.user_search::-webkit-scrollbar {
+  display: none;
 }
 .header {
   display: grid;
