@@ -1,7 +1,8 @@
 import Hotels from "../styles/Hotels.module.css"
 import EditHotels from "../styles/EditHotels.module.css"
 import { useState, useEffect } from "react"
-export default function HotelTable({ hotels }) {
+import { TiDelete } from "react-icons/ti"
+export default function HotelTable({ hotels, rooms, setRooms }) {
   const [hotelState, setHotelState] = useState([...hotels])
   const [statuses, setStatuses] = useState([])
   const [renderError, setRenderError] = useState(false)
@@ -42,6 +43,45 @@ export default function HotelTable({ hotels }) {
       statuses.includes(false) ? setRenderError(true) : setRenderSuccess(true)
     })
   }
+
+  const deleteHotel = async (i) => {
+    const deleteData = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        hotel_id: hotelState[i].hotel_id,
+      }),
+    }
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/deleteHotel`,
+      deleteData
+    )
+    const data = await res.json()
+
+    if (data.response.message === "success") {
+      setHotelState(hotelState.filter((hotel, index) => index !== i))
+    }
+    const deleteRooms = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        hotel_id: hotelState[i].hotel_id,
+      }),
+    }
+
+    const res2 = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/deleteRooms`,
+      deleteRooms
+    )
+    const data2 = await res2.json()
+
+    setRooms(rooms.filter((room) => room.hotel_id !== hotelState[i].hotel_id))
+  }
+
   useEffect(() => {
     console.log(hotelState)
   }, [hotelState])
@@ -76,12 +116,18 @@ export default function HotelTable({ hotels }) {
         {hotelState?.map((hotel, i) => {
           return (
             <div key={hotel.hotel_id} className={Hotels.tableRow}>
-              <input
-                name={"hotel_name" + i}
-                className={Hotels.hotel}
-                value={hotel.hotel_name}
-                onChange={handleChange}
-              />
+              <span>
+                <TiDelete
+                  style={{ cursor: "pointer" }}
+                  onClick={() => deleteHotel(i)}
+                />
+                <input
+                  name={"hotel_name" + i}
+                  className={Hotels.hotel}
+                  value={hotel.hotel_name}
+                  onChange={handleChange}
+                />
+              </span>
               <input
                 className={Hotels.stars}
                 type="number"

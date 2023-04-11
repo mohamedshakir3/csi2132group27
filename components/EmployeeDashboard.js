@@ -223,12 +223,6 @@ export default function EmployeeDashboard({
                 className={DashboardStyles.search_bar}
                 placeholder="Search Bookings"
               />
-              <button
-                className={DashboardStyles.toggle}
-                onClick={createRenting}
-              >
-                +
-              </button>
             </div>
             <div className={DashboardStyles.renting_container}>
               {filterRentings?.map((renting) => {

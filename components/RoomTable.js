@@ -1,15 +1,16 @@
 import EditRooms from "../styles/EditRooms.module.css"
 import EditHotels from "../styles/EditHotels.module.css"
+import { TiDelete } from "react-icons/ti"
 import { useState, useEffect } from "react"
-export default function RoomTable({ rooms }) {
-  const [roomState, setRoomstate] = useState([...rooms])
+export default function RoomTable({ rooms, setRooms }) {
+  // const [roomState, setRoomstate] = useState([...rooms])
   const [statuses, setStatuses] = useState([])
   const [renderError, setRenderError] = useState(false)
   const [renderSuccess, setRenderSuccess] = useState(false)
 
   const handleChange = (e) => {
-    setRoomstate(
-      roomState.map((room, i) => {
+    setRooms(
+      rooms.map((room, i) => {
         return i == parseInt(e.target.name.slice(-1))
           ? (room = {
               ...room,
@@ -22,7 +23,7 @@ export default function RoomTable({ rooms }) {
   }
 
   const updateRooms = async () => {
-    roomState.map(async (hotel) => {
+    rooms.map(async (hotel) => {
       const putData = {
         method: "PUT",
         headers: {
@@ -43,12 +44,8 @@ export default function RoomTable({ rooms }) {
     })
   }
   useEffect(() => {
-    console.log(roomState)
-  }, [roomState])
-
-  //   useEffect(() => {
-  //     statuses.includes(false) ? setRenderError(true) : setRenderSuccess(true)
-  //   }, [statuses])
+    console.log(rooms)
+  }, [rooms])
 
   return (
     <>
@@ -71,17 +68,23 @@ export default function RoomTable({ rooms }) {
           <span>Hotel ID</span>
         </div>
 
-        {roomState?.map((room, i) => {
+        {rooms?.map((room, i) => {
           return (
             <div key={room.room_id} className={EditRooms.tableRow}>
-              <input
-                name={"price" + i}
-                className={EditRooms.hotel}
-                value={room.price}
-                onChange={handleChange}
-                type="number"
-                pattern="^\d*(\.\d{0,2})?$"
-              />
+              <span>
+                <TiDelete
+                  style={{ cursor: "pointer" }}
+                  onClick={() => deleteHotel(i)}
+                />
+                <input
+                  name={"price" + i}
+                  className={EditRooms.hotel}
+                  value={room.price}
+                  onChange={handleChange}
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                />
+              </span>
               <input
                 className={EditRooms.stars}
                 type="number"

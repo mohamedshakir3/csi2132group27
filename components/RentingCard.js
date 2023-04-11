@@ -8,10 +8,7 @@ export default function RentingCard({ renting }) {
     <div className={RentingStyles.accordian}>
       <div className={RentingStyles.grid}>
         <div className={RentingStyles.hotel_info}>
-          <span className={RentingStyles.country_tag}>
-            {" "}
-            {renting?.country}{" "}
-          </span>
+          <span className={RentingStyles.country_tag}>{renting?.country}</span>
           <span className={RentingStyles.hotel_name}>
             {renting?.hotel_name}
             <span className={RentingStyles.stars}>
