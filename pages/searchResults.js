@@ -28,6 +28,13 @@ export default function searchResults({ rooms }) {
     searchBar: "",
   })
 
+  const navigateToViews = () => {
+    router.push({
+      pathname: "/views",
+      query,
+    })
+  }
+
   useEffect(() => {
     setFilter(
       rooms.filter((item) => {
@@ -81,7 +88,12 @@ export default function searchResults({ rooms }) {
                 name="searchBar"
                 onChange={handleChange}
               />
-              <button className={SearchResults.search_btn}>Views</button>
+              <button
+                onClick={navigateToViews}
+                className={SearchResults.search_btn}
+              >
+                Views
+              </button>
               <Link className={SearchResults.back_btn} href="/">
                 Home
               </Link>
