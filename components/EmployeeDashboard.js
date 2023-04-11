@@ -86,6 +86,9 @@ export default function EmployeeDashboard({
           <Link href="/">
             <button className={DashboardStyles.home}>Home</button>
           </Link>
+          <Link href="/editHotels">
+            <button className={DashboardStyles.home}>Hotels</button>
+          </Link>
         </div>
 
         <div className={DashboardStyles.employee_dashboard}>

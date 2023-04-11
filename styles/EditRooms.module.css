@@ -1,0 +1,43 @@
+.table {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 90%;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100%-1rem);
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: 3px solid #dddddc;
+  border-bottom-width: 0px;
+  padding: 1rem;
+}
+
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100%-1rem);
+  border: 3px solid #dddddc;
+  padding: 1rem;
+  border-bottom-width: 0px;
+}
+.tableRow:last-child {
+  border-bottom-width: 3px;
+}
+
+.stars,
+.manager_id,
+.chain_id {
+  width: 2rem;
+  text-align: center;
+}
+.address,
+.email,
+.phone,
+.hotel {
+  width: 7rem;
+}
