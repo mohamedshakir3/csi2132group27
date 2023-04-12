@@ -43,9 +43,27 @@ export default function RoomTable({ rooms, setRooms }) {
       statuses.includes(false) ? setRenderError(true) : setRenderSuccess(true)
     })
   }
-  useEffect(() => {
-    console.log(rooms)
-  }, [rooms])
+
+  const deleteRoom = async (i) => {
+    const deleteData = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        room_id: rooms[i].room_id,
+      }),
+    }
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/deleteSpecificRoom`,
+      deleteData
+    )
+    const data = await res.json()
+
+    if (data.response.message === "success") {
+      setRooms(rooms.filter((hotel, index) => index !== i))
+    }
+  }
 
   return (
     <>
@@ -74,7 +92,7 @@ export default function RoomTable({ rooms, setRooms }) {
               <span>
                 <TiDelete
                   style={{ cursor: "pointer" }}
-                  onClick={() => deleteHotel(i)}
+                  onClick={() => deleteRoom(i)}
                 />
                 <input
                   name={"price" + i}

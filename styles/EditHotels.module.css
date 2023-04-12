@@ -44,9 +44,9 @@
   border-radius: 2.5rem;
   display: grid;
   grid-auto-rows: min-content;
-  place-items: center;
-  align-content: center;
-  overflow: hidden;
+  align-content: stretch;
+  align-items: start;
+  overflow-y: scroll;
 }
 .header {
   height: 6rem;
@@ -84,7 +84,7 @@
 }
 
 .wrapper {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   width: 95%;
   height: 70%;
   display: grid;

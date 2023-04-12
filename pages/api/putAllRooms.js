@@ -9,16 +9,16 @@ export default async function handler(req, res) {
   const room = req.body
   const update = await query({
     query:
-      "UPDATE Room SET price = ?, capacity = ?, extendable = ?, hotel_id = ? WHERE room_id = ?;",
+      "UPDATE Room SET price = ?, capacity = ?, view_type = ?, extendable = ?, hotel_id = ? WHERE room_id = ?;",
     values: [
-      room.price,
+      parseFloat(room.price),
       room.capacity,
+      room.view_type,
       room.extendable,
       room.hotel_id,
       room.room_id,
     ],
   })
   const message = update.affectedRows ? "success" : "error"
-
   res.status(200).json({ response: { message: message, data: room } })
 }

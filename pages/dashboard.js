@@ -175,8 +175,6 @@ export async function getServerSideProps() {
   const roomData = await roomRes.json()
   const rooms = roomData.results
 
-  console.log(rooms)
-
   return {
     props: {
       customers,

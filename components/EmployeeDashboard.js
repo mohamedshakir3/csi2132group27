@@ -113,13 +113,13 @@ export default function EmployeeDashboard({
             </span>
             <span className={DashboardStyles.row}>
               <span>
-                User ID:
+                Password:
                 <input
                   className={DashboardStyles.input}
                   disabled={!editable}
                   onChange={handleChange}
-                  value={customer.customer_id}
-                  name="user_id"
+                  value={customer.password}
+                  name="password"
                 />
               </span>
               <span style={{ cursor: "pointer" }}>
